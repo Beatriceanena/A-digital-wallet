@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+  
+<h2>  Customer </h2>
+<table class="table table-dark table-striped" style="width:70rem;">
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>nationality</th>
+        <th>age</th>
+        <th>phonenumber</th>
+        <th>gender</th>
+        <th>address</th>
+        <th>Profile</th>
+
+    </tr>
+    {% for customer in customers %}
+    <tr>
+        <td>{{customer.first_name}}</td>
+        <td>{{customer.last_name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.nationality}}</td>
+        <td>{{customer.age}}</td>
+        <td>{{customer.phonenumber}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.address}}</td>
+        <td> <a href="{% url 'customer_profile' id=customer.id %}"> View Profile </a></td>
+        
+    </tr>
+    {% endfor %}
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

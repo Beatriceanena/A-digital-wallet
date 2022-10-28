@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <style>
+      .body{
+        backgroundcolor:red;
+      }
+    </style>
+    <h1>  Account </h1>
+<table class="table table-dark table-striped" style="width:70rem;">
+  <tr>
+      <th>account_name</th>
+      <th>account_type</th>
+      <th>account_number</th>
+      <th>balance</th>
+      <th>wallet</th>
+      <th>profile</th>
+  
+  </tr>
+  {% for account in accounts %}
+  <tr>
+      <td>{{ account.account_name }}</td>
+      <td>{{ account.account_type }}</td>
+      <td>{{ account.account_number }}</td>
+      <td>{{ account.balance }}</td>
+      <td>{{ account.wallet }}</td>
+      <td> <a href="{% url 'account_profile' id=account.id %}"> View Profile </a></td>
+
+  </tr>
+  {% endfor %}
+  </table>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
+
